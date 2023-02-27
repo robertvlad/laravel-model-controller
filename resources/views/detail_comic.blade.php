@@ -5,7 +5,7 @@
 <main>
     <div class="blue-line">
         <div class="container-small">
-            <img class="img-detail" src="{{ $single['thumb'] }}">
+            <img class="img-detail" src="{{ $comic['thumb'] }}">
         </div>
     </div>
 
@@ -13,12 +13,12 @@
         <div class="container-fluid py-5">
             <div class="row">
                 <div class="col-8">
-                    <h1 class="py-2">{{ $single['title'] }}</h1>
+                    <h1 class="py-2">{{ $comic['title'] }}</h1>
                     <div class="container">
                         <div class="row">
                             <div class="col-8 green">
                                 <div class="d-flex justify-content-between">
-                                    <span>U.S. Price :{{ $single['price'] }}</span>
+                                    <span>U.S. Price :{{ $comic['price'] }}</span>
                                     <span>AVAILABLE</span>
                                 </div>
                             </div>
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="py-2">{{ $single['description'] }}</p>
+                    <p class="py-2">{{ $comic['description'] }}</p>
                 </div>
                 <div class="col-4">
                     <span class="text-end">ADVERTISEMENT</span>
@@ -46,12 +46,12 @@
                         <hr>
                         <div class="d-flex justify-content-between py-2">
                             <span>Art by: </span>
-                            <span>{{ implode(', ', $single['artists']) }}</span>
+                            <span>{{ $comic['artists'] }}</span>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between py-2">
                             <span>Written by: </span>
-                            <span>{{ implode(', ', $single['writers']) }}</span>
+                            <span>{{ $comic['writers'] }}</span>
                         </div> 
                         <hr>                    
                     </div>
@@ -60,17 +60,17 @@
                         <hr>
                         <div class="d-flex justify-content-between py-2">
                             <span>Series:</span>
-                            <span>{{ $single['series'] }}</span>
+                            <span>{{ $comic['series'] }}</span>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between py-2">
                             <span> U.S. Price:</span>
-                            <span>{{ $single['price'] }}</span>
+                            <span>{{ $comic['price'] }}</span>
                         </div> 
                         <hr> 
                         <div class="d-flex justify-content-between py-2">
                             <span> On Sale Date:</span>
-                            <span>{{ $single['sale_date'] }}</span>
+                            <span>{{ $comic['sale_date'] }}</span>
                         </div> 
                         <hr>                        
                     </div>

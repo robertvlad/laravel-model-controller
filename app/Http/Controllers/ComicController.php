@@ -7,9 +7,20 @@ use App\Models\Comic as Comic;
 
 class ComicController extends Controller
 {
-    public function index() {
+    public function index(){
         $comics = Comic::all();
-        $pages = config('comics.pages');
-        return view('comics', compact('comics', 'pages'));
+
+        return view('comics', compact('comics'));
+    }
+
+    public function show ($id){
+
+        $comic = Comic::find($id);
+
+        $data = [
+            'comic' => $comic,
+        ];
+
+        return view ('detail_comic', $data);
     }
 }
