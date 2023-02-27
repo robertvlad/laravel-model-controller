@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComicController as ComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,26 +48,28 @@ Route::get('/characters', function () {
     return view('characters', compact('menu'));
 })->name('characters');
 
-Route::get('/comics', function () {
+// Route::get('/comics', function () {
 
-    $menu = [
-        'COMICS' => '/comics',
-        'CHARACTERS' => '/characters',
-        'MOVIES' => '/movies',
-        'TV' => '/tv',
-        'GAMES' => '/games',
-        'COLLECTIBLES' => '/collectibles',
-        'CHARACTERS' => '/characters',
-        'VIDEOS' => '/videos',
-        'FANS' => '/fans',
-        'NEWS' => '/news',
-        'SHOP' => '/shop',
-    ];
+//     $menu = [
+//         'COMICS' => '/comics',
+//         'CHARACTERS' => '/characters',
+//         'MOVIES' => '/movies',
+//         'TV' => '/tv',
+//         'GAMES' => '/games',
+//         'COLLECTIBLES' => '/collectibles',
+//         'CHARACTERS' => '/characters',
+//         'VIDEOS' => '/videos',
+//         'FANS' => '/fans',
+//         'NEWS' => '/news',
+//         'SHOP' => '/shop',
+//     ];
 
-    $cards = config('comics');
+//     $cards = config('comics');
 
-    return view('comics', compact('menu', 'cards'));
-})->name('comics');
+//     return view('comics', compact('menu', 'cards'));
+// })->name('comics');
+
+Route::get('/comics', [ComicController::class, 'index', 'menu'])->name('comics');
 
 Route::get('/movies', function () {
 
