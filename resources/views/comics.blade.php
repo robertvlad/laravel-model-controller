@@ -13,12 +13,22 @@
                         <a class="current" href="#">CURRENT SERIES</a>
                     </div>
                     <div class="d-flex flex-wrap justify-content-between">
-                        @foreach (array_slice($cards, 0, 10) as $card)
+                        @foreach ($comics as $key => $item)
+                            <div class="col-6 col-md-4 col-lg-2 comic pb-4">
+                                <img src="{{ $item['thumb'] }}" alt="{{ $item['title'] }}" class="mb-2">
+                                <a href="{{ route('detail_comic', ['id' => $key]) }}">
+                                    <div class="text-uppercase">{{ $item['series'] }}</div>
+                                </a>
+                            </div>
+                        @endforeach
+                        {{-- @foreach (array_slice($cards, 0, 10) as $card)
                             <div class="cards-comics">
+                                <img src="{{ movie->thumb }}" alt="">
+                                <a href="{{ route('detail_comic', ['title' => $card['title']]) }}"><img src="{{ $card['thumb'] }}" alt=""></a>
                                 <a href="{{ route('detail_comic', ['title' => $card['title']]) }}"><img src="{{ $card['thumb'] }}" alt=""></a>
                                 <a href="{{ route('detail_comic', ['title' => $card['title']]) }}"><p>{{ $card['title']}}</p></a>
                             </div>                        
-                        @endforeach
+                        @endforeach --}}
                     </div>
                     <div class="d-flex justify-content-center">
                         <a class="load" href="#">LOAD MORE</a>

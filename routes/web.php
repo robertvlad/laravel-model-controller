@@ -14,7 +14,7 @@ use App\Http\Controllers\ComicController as ComicController;
 |
 */
 
-Route::get('/comics/{title}', function($title) {
+Route::get('/comics/{id}', function($title) {
 
     $cards = config('comics');
 
@@ -69,7 +69,7 @@ Route::get('/characters', function () {
 //     return view('comics', compact('menu', 'cards'));
 // })->name('comics');
 
-Route::get('/comics', [ComicController::class, 'index', 'menu'])->name('comics');
+Route::get('/comics', [ComicController::class, 'index'])->name('comics');
 
 Route::get('/movies', function () {
 
